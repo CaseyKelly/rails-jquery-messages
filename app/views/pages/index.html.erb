@@ -4,11 +4,11 @@
       <i class="fa fa-square-o"></i>
     </button>
 
-    <button class="btn btn-default" disabled="disabled">
+    <button class="btn btn-default" disabled="disabled" id="read">
       Mark As Read
     </button>
 
-    <button class="btn btn-default" disabled="disabled">
+    <button class="btn btn-default" disabled="disabled" id="unread">
       Mark As Unread
     </button>
 
@@ -43,7 +43,7 @@
     <div data-message-url="<%= message_path(message) %>" class="row message <%= message.read ? 'read' : 'unread' %>">
       <div class="col-md-1">
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-md-2 select-box">
             <input type="checkbox" class="select">
           </div>
           <div class="col-md-2">
