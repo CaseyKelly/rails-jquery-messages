@@ -1,25 +1,46 @@
 $(document).ready(function() {
 
-  $('.select-all').click(function() {
-    if ($(this).children()[0].className == "fa fa-square-o") {
-      $('.fa.fa-square-o').replaceWith("<i class='fa fa-check-square-o'></i>");
-      $('.select').replaceWith("<input type='checkbox' class='select' checked></i>");
-    } else {
-      $('.fa.fa-check-square-o').replaceWith("<i class='fa fa-square-o'></i>");
-      $('.select').replaceWith("<input type='checkbox' class='select'></i>");
+  var app = (function() {
+    return {
+      buttonEnable: buttonEnable,
+      selectAll: selectAll
+    };
+
+    function buttonEnable() {
+      if ($('div.row.message').hasClass('selected')) {
+       $('.read:disabled').prop("disabled", false);
+       $('.form-control:disabled').prop("disabled", false);
+      } else {
+       $('.read').prop("disabled", true);
+       $('.form-control').prop("disabled", true);
+      }
     }
+
+    function selectAll() {
+     $(".btn:has(i.fa)").on('click', function(e) {
+       $(this).children().first().toggleClass("fa-square-o").toggleClass("fa-check-square-o");
+       $('.message').toggleClass('selected');
+       toggleProp('input', 'checked');
+       buttonEnable();
+     });
+    }
+  })();
+
+  $(function() {
+    app.selectAll();
+    $("input:checkbox").on('click', function() {
+      $(this).closest('.message').toggleClass('selected');
+      $(this).trigger('change');
+      app.buttonEnable();
+      if ($(".select:checked").length === $(".message").length) {
+        $(".btn:has(i.fa)").children().first().removeClass("fa-square-o").toggleClass("fa-check-square-o");
+      }
+    });
   });
 
-  var mark = function markButtons() {
-    if ($(".select:checked").length > 0) {
-      $('#read').replaceWith("<button class='btn btn-default' id='read'>Mark As Read</button>");
-      $("#unread").replaceWith("<button class='btn btn-default' id='unread'>Mark As Unread</button>");
-    } else {
-      $('#read').replaceWith("<button class='btn btn-default' id='read' disabled='disabled'>Mark As Read</button>");
-      $("#unread").replaceWith("<button class='btn btn-default' id='unread' disabled='disabled'>Mark As Unread</button>");
-    }
+  function toggleProp(el, property) {
+   var val = $(el).prop(property);
+   $(el).prop(property, !val);
   }
 
-  $('.select-box').on('click', '.select', mark);
-  $('.select-all').on('click', mark);
 });

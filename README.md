@@ -1,4 +1,4 @@
-# jQuery Inbox
+<!-- # jQuery Inbox
 
 ## Setup
 
@@ -7,9 +7,9 @@
 * Run `rails s`
 * Open http://localhost:3000
 
-## Tips
+## Tips -->
 
-When creating event listeners, follow this pattern for now:
+<!-- When creating event listeners, follow this pattern for now:
 
 1. Wrap all code in `$(document).ready(...)` like
   ```js
@@ -35,13 +35,13 @@ When creating event listeners, follow this pattern for now:
   });
   ```
 
-It may help to split your code up into multiple js files.
+It may help to split your code up into multiple js files. -->
 
 ## Stories
 
 ### Selection
 
-**User selects all messages**
+<!-- **User selects all messages**
 
 User clicks the checkbox button in the upper left.
 
@@ -53,8 +53,8 @@ User clicks the checkbox button in the upper left.
 If all messages are selected, a user can deselect all messages but clicking the "select all" button again.
 
 - Remove the `selected` class from all `message` divs
-- Change the toolbar icon to `fa-check-square`
-
+- Change the toolbar icon to `fa-check-square` -->
+<!--
 **User can select an individual message**
 
 - Add the `selected` class to the message div
@@ -62,15 +62,15 @@ If all messages are selected, a user can deselect all messages but clicking the 
   - "Mark as read"
   - "Mark as unread"
   - "Apply Label"
-  - "Remove Label"
-- If all messages are selected
-  - Checkbox in the toolbar should get the `fa-check-square-o` class
+  - "Remove Label" -->
+<!-- - If all messages are selected
+  - Checkbox in the toolbar should get the `fa-check-square-o` class -->
 - If some messages are still unselected
   - Checkbox in the toolbar should get the `fa-minus-square-o` class
 
-**User can unselect an individual message**
+<!-- **User can unselect an individual message** -->
 
-- Remove the `selected` class from the message div
+<!-- - Remove the `selected` class from the message div
 - If all messages are unselected
   - The following elements should become disabled
     - "Mark as read"
@@ -79,7 +79,7 @@ If all messages are selected, a user can deselect all messages but clicking the 
     - "Remove Label"
   - Checkbox in the toolbar should get the "fa-square-o" class
 - If some messages are still unselected
-  - Checkbox in the toolbar should get the "fa-minus-square-o" class
+  - Checkbox in the toolbar should get the "fa-minus-square-o" class -->
 
 **User can select all messages if some are unselected**
 
