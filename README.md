@@ -80,12 +80,12 @@ If all messages are selected, a user can deselect all messages but clicking the 
   - Checkbox in the toolbar should get the "fa-square-o" class
 - If some messages are still unselected
   - Checkbox in the toolbar should get the "fa-minus-square-o" class -->
-
+<!--
 **User can select all messages if some are unselected**
 
 If a user clicks "Select All", then deselects an individual message, then the "Select All" checkbox should be in its middle state (`fa-minus-square-o`).
 
-If a user clicks the button at this point, it should still select all messages.
+If a user clicks the button at this point, it should still select all messages. -->
 
 ### Stars
 

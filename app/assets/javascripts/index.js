@@ -33,7 +33,11 @@ $(document).ready(function() {
       $(this).trigger('change');
       app.buttonEnable();
       if ($(".select:checked").length === $(".message").length) {
-        $(".btn:has(i.fa)").children().first().removeClass("fa-square-o").toggleClass("fa-check-square-o");
+        $(".btn:has(i.fa)").children().first().removeClass("fa-minus-square-o").toggleClass("fa-check-square-o");
+      } else if ($(".select:checked").length > 0 && ($(".select:checked").length < 30)) {
+        $(".btn:has(i.fa)").children().first().removeClass("fa-square-o").addClass("fa-minus-square-o");
+      } else if ($(".select:checked").length === 0) {
+        $(".btn:has(i.fa)").children().first().removeClass("fa-minus-square-o").addClass("fa-square-o");
       }
     });
   });
