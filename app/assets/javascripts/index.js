@@ -1,10 +1,13 @@
 $(document).ready(function() {
 
+  $('.badge').text($('.unread').length);
+
   var app = (function() {
     return {
       buttonEnable: buttonEnable,
       selectAll: selectAll,
-      star: star
+      star: star,
+      trash: trash
     };
 
     function star() {
@@ -14,6 +17,16 @@ $(document).ready(function() {
         } else {
           $(this).removeClass('fa-star').addClass('fa-star-o');
         }
+      });
+    }
+
+    function trash() {
+      $('.btn:nth-child(6)').on('click', function() {
+        $('.message.selected').remove();
+        $('.badge').text($('.unread').length);
+        $('.read').prop("disabled", true);
+        $('.form-control').prop("disabled", true);
+        $('.fa-minus-square-o').removeClass("fa-minus-square-o").addClass("fa-square-o");
       });
     }
 
@@ -28,7 +41,7 @@ $(document).ready(function() {
     }
 
     function selectAll() {
-     $(".btn:has(i.fa)").on('click', function(e) {
+      $('.toolbar .btn:nth-child(1)').on('click', function(e) {
        $(this).children().first().toggleClass("fa-square-o").toggleClass("fa-check-square-o");
        $('.message').toggleClass('selected');
        toggleProp('input', 'checked');
@@ -40,6 +53,7 @@ $(document).ready(function() {
   $(function() {
     app.selectAll();
     app.star();
+    app.trash();
     $("input:checkbox").on('click', function() {
       $(this).closest('.message').toggleClass('selected');
       $(this).trigger('change');

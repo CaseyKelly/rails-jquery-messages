@@ -101,16 +101,16 @@ User clicks the star next to a message
 
 - Remove the `fa-star` class and add the `fa-star-o` class -->
 
-### Deletion
+<!-- ### Deletion
 
 **User can delete messages**
 
 User selects one or more messages and click the "Trash" button
 
 - To all the `.message` divs that are selected
-  - Remove the message div from the dom
-- Update the unread count to be accurate (in case you deleted an unread message)
-- Disable all of the toolbar buttons that should be disabled
+  - Remove the message div from the dom -->
+<!-- - Update the unread count to be accurate (in case you deleted an unread message) -->
+<!-- - Disable all of the toolbar buttons that should be disabled -->
 
 **Message deletions are sent to the server**
 
