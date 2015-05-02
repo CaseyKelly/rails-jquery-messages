@@ -3,8 +3,19 @@ $(document).ready(function() {
   var app = (function() {
     return {
       buttonEnable: buttonEnable,
-      selectAll: selectAll
+      selectAll: selectAll,
+      star: star
     };
+
+    function star() {
+      $('.star').on('click', function (){
+        if ($(this).is('.fa-star-o')) {
+          $(this).removeClass('fa-star-o').addClass('fa-star');
+        } else {
+          $(this).removeClass('fa-star').addClass('fa-star-o');
+        }
+      });
+    }
 
     function buttonEnable() {
       if ($('div.row.message').hasClass('selected')) {
@@ -28,6 +39,7 @@ $(document).ready(function() {
 
   $(function() {
     app.selectAll();
+    app.star();
     $("input:checkbox").on('click', function() {
       $(this).closest('.message').toggleClass('selected');
       $(this).trigger('change');
@@ -38,13 +50,6 @@ $(document).ready(function() {
         $(".btn:has(i.fa)").children().first().removeClass("fa-square-o").addClass("fa-minus-square-o");
       } else if ($(".select:checked").length === 0) {
         $(".btn:has(i.fa)").children().first().removeClass("fa-minus-square-o").addClass("fa-square-o");
-      }
-    });
-    $('.star').on('click', function (){
-      if ($(this).is('.fa-star-o')) {
-        $(this).removeClass('fa-star-o').addClass('fa-star');
-      } else {
-        $(this).removeClass('fa-star').addClass('fa-star-o');
       }
     });
   });
