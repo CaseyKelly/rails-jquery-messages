@@ -40,6 +40,13 @@ $(document).ready(function() {
         $(".btn:has(i.fa)").children().first().removeClass("fa-minus-square-o").addClass("fa-square-o");
       }
     });
+    $('.star').on('click', function (){
+      if ($(this).is('.fa-star-o')) {
+        $(this).removeClass('fa-star-o').addClass('fa-star');
+      } else {
+        $(this).removeClass('fa-star').addClass('fa-star-o');
+      }
+    });
   });
 
   function toggleProp(el, property) {

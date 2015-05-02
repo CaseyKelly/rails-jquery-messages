@@ -65,8 +65,8 @@ If all messages are selected, a user can deselect all messages but clicking the 
   - "Remove Label" -->
 <!-- - If all messages are selected
   - Checkbox in the toolbar should get the `fa-check-square-o` class -->
-- If some messages are still unselected
-  - Checkbox in the toolbar should get the `fa-minus-square-o` class
+<!-- - If some messages are still unselected
+  - Checkbox in the toolbar should get the `fa-minus-square-o` class -->
 
 <!-- **User can unselect an individual message** -->
 
@@ -87,7 +87,7 @@ If a user clicks "Select All", then deselects an individual message, then the "S
 
 If a user clicks the button at this point, it should still select all messages. -->
 
-### Stars
+<!-- ### Stars
 
 **User can star a message**
 
@@ -99,7 +99,7 @@ User clicks the star next to a message
 
 User clicks the star next to a message
 
-- Remove the `fa-star` class and add the `fa-star-o` class
+- Remove the `fa-star` class and add the `fa-star-o` class -->
 
 ### Deletion
 
