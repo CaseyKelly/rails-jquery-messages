@@ -22,6 +22,12 @@ $(document).ready(function() {
 
     function trash() {
       $('.btn:nth-child(6)').on('click', function() {
+        $('.selected').each(function(index, val){
+          $.ajax({
+            type: "DELETE",
+            url: $(val).data('message-url')
+          });
+        });
         $('.message.selected').remove();
         $('.badge').text($('.unread').length);
         $('.read').prop("disabled", true);

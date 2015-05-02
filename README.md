@@ -112,9 +112,9 @@ User selects one or more messages and click the "Trash" button
 <!-- - Update the unread count to be accurate (in case you deleted an unread message) -->
 <!-- - Disable all of the toolbar buttons that should be disabled -->
 
-**Message deletions are sent to the server**
+<!-- **Message deletions are sent to the server**
 
-Make an AJAX call
+Make an AJAX call -->
 
 ### Read / Unread
 
